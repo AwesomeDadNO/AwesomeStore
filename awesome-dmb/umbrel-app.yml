@@ -1,11 +1,11 @@
 manifestVersion: 1
-id: awesome-dmb
+id: awesome-dumb
 name: DMB
 tagline: An advanced solution for automated Debrid downloads
 icon: https://i.imgur.com/KllfrRz.png
 category: files & productivity
-version: "1.1.3"
-port: 8282
+version: "1"
+port: 3003
 description: >-
   🧩 Decypharr is an open source application written in Go that acts as a qBittorrent compatible API while integrating support for popular Debrid services such as Real Debrid, All Debrid, Torbox and Debrid Link. It is designed for seamless integration with automation tools like Sonarr, Radarr and Lidarr which can interact with it as if it were a standard qBittorrent client. This allows users to automate the process of downloading torrents through their premium Debrid accounts without needing to run a traditional torrent client or maintain their own seedbox.
 
