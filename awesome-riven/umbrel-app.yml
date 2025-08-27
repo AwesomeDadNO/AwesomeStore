@@ -10,7 +10,6 @@ description: >-
 
 Plex torrent streaming through Debrid and 3rd party services like Overseerr, Mdblist, etc.
 
-Services currently supported:
 
 Type	Supported
 Debrid services	Real Debrid, All Debrid, TorBox
@@ -26,14 +25,14 @@ Please add feature requests and issues over on our Issue Tracker or join our Dis
 We are constantly adding features and improvements as we go along and squashing bugs as they arise.
 
 
-developer: awesome dad
+developer: awesomedad
 website: https://github.com/rivenmedia/riven
 submitter:
 submission:
 repo:
 support: 
 gallery:
-  - https://raw.githubusercontent.com/rivenmedia/riven/main/assets/riven-light.png
+  
 
 releaseNotes: >
   
