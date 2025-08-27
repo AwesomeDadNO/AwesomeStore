@@ -1,0 +1,56 @@
+services:
+    riven-frontend:
+        image: spoked/riven-frontend:latest
+        container_name: riven-frontend
+        restart: unless-stopped
+        tty: true
+        environment:
+            - TZ=Etc/UTC
+        ports:
+            - 3000:3000
+        volumes:
+            - ./config:/riven/config # You need to mount a config directory here (different from riven)
+        depends_on:
+            riven:
+                condition: service_started
+
+    riven:
+        image: spoked/riven:latest
+        container_name: riven
+        restart: unless-stopped
+        ports:
+            - "8080:8080"
+        tty: true
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=America/New_York
+            - RIVEN_FORCE_ENV=true
+            - RIVEN_DATABASE_HOST=postgresql+psycopg2://postgres:postgres@riven-db/riven
+        healthcheck:
+            test: curl -s http://localhost:8080 >/dev/null || exit 1
+            interval: 30s
+            timeout: 10s
+            retries: 10
+        volumes:
+            - ./data:/riven/data
+            - /mnt:/mnt
+        depends_on:
+            riven_postgres:
+                condition: service_healthy
+
+    riven_postgres:
+        image: postgres:17-alpine
+        container_name: riven-db
+        environment:
+            PGDATA: /var/lib/postgresql/data/pgdata
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: riven
+        volumes:
+            - ./riven-db:/var/lib/postgresql/data/pgdata
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            interval: 10s
+            timeout: 5s
+            retries: 5

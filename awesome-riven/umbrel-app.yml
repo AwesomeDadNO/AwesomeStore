@@ -1,0 +1,41 @@
+manifestVersion: 1
+id: awesome-burg
+name: Zurg
+tagline: 
+icon: https://i.ytimg.com/vi/Bz7gPYBH0AU/maxresdefault.jpg
+category: Monitoring
+version: "1.0.3"
+port: 20115
+description: >-
+
+Plex torrent streaming through Debrid and 3rd party services like Overseerr, Mdblist, etc.
+
+Services currently supported:
+
+Type	Supported
+Debrid services	Real Debrid, All Debrid, TorBox
+Content services	Plex Watchlist, Overseerr, Mdblist, Listrr, Trakt
+Scraping services	Comet, Jackett, Torrentio, Orionoid, Knightcrawler, Mediafusion, Prowlarr, Zilean
+Media servers	Plex, Jellyfin, Emby
+and more to come!
+
+Check out out Project Board to stay informed!
+
+Please add feature requests and issues over on our Issue Tracker or join our Discord to chat with us!
+
+We are constantly adding features and improvements as we go along and squashing bugs as they arise.
+
+
+developer: awesome dad
+website: https://github.com/rivenmedia/riven
+submitter:
+submission:
+repo:
+support: 
+gallery:
+  - https://raw.githubusercontent.com/rivenmedia/riven/main/assets/riven-light.png
+
+releaseNotes: >
+  
+dependencies: []
+path: ""
